@@ -1,0 +1,1 @@
+- в будущем надо добавить Commit Linting для проверки на Conventional Commits

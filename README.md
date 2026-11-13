@@ -1,75 +1,100 @@
-# React + TypeScript + Vite
+# Arterio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Arterio** — небольшой учебный веб-сервис для самопознания и рефлексии. Оно помогает фиксировать мысли, отслеживать настроение и возвращаться к истории своей активности.
 
-Currently, two official plugins are available:
+На текущем этапе разрабатывается минимальная версия проекта — **Arterio Mini**.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Возможности
 
-## React Compiler
+### Insights
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Раздел для сохранения мыслей, идей, наблюдений и личных открытий.
 
-## Expanding the ESLint configuration
+- Создание записей.
+- Просмотр списка записей.
+- Редактирование и удаление записей.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Mood
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Раздел для отслеживания настроения и фиксации впечатлений о прошедшем дне.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- Создание записей о настроении.
+- Добавление описания дня.
+- Просмотр истории настроений.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Activity
 
+Общая хронология активности пользователя.
+
+- Просмотр записей из Insights и Mood в одном месте.
+- Группировка событий по датам.
+- Отображение активности в хронологическом порядке.
+
+## Технологический стек
+
+| Технология    | Назначение                                |
+| ------------- | ----------------------------------------- |
+| React         | Построение пользовательского интерфейса   |
+| TypeScript    | Типизация и контроль данных               |
+| Vite          | Сборка и запуск проекта                   |
+| React Router  | Маршрутизация                             |
+| Redux Toolkit | Управление состоянием                     |
+| Redux Persist | Сохранение состояния между перезагрузками |
+| Ant Design    | Базовые UI-компоненты                     |
+| SCSS Modules  | Стилизация компонентов                    |
+| ESLint        | Проверка качества кода                    |
+| Prettier      | Форматирование кода                       |
+
+## Архитектура
+
+Проект разрабатывается с использованием подхода **Feature-Sliced Design (FSD)**.
+
+Основные слои архитектуры:
+
+- `app` — инициализация приложения, провайдеры и глобальные настройки.
+- `pages` — страницы приложения.
+- `widgets` — крупные самостоятельные блоки интерфейса.
+- `features` — пользовательские действия и сценарии.
+- `entities` — бизнес-сущности приложения.
+- `shared` — переиспользуемые компоненты, утилиты и общие ресурсы.
+
+## Запуск проекта
+
+### Требования
+
+- Node.js
+- npm
+
+### Установка
+
+```bash
+git clone <repository-url>
+cd arterio
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+### Запуск в режиме разработки
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```bash
+npm run dev
 ```
+
+### Сборка проекта
+
+```bash
+npm run build
+```
+
+## Хранение данных
+
+В первой версии приложения данные хранятся локально в браузере с использованием `localStorage`.
+
+Redux Persist отвечает за сохранение и восстановление необходимой части Redux Store.
+
+В дальнейшем архитектура может быть расширена для работы с backend и Supabase.
+
+## Статус проекта
+
+\<badge color="info">In development\</badge>
+
+Arterio Mini находится в разработке. Основная задача текущего этапа — создать простое, удобное и работающее приложение с базовыми возможностями саморефлексии.
