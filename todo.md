@@ -1,1 +1,3 @@
 - в будущем надо добавить Commit Linting для проверки на Conventional Commits
+- удалить потом `index.css`
+- настроить eslint на архитектуру fsd
