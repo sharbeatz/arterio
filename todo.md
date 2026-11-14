@@ -1,3 +1,2 @@
 - в будущем надо добавить Commit Linting для проверки на Conventional Commits
 - настроить eslint на архитектуру fsd
-- добавить алиасы в проект. в main,tsx `import "./app/styles/index.scss";`
