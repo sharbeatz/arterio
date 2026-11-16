@@ -1,7 +1,7 @@
 import { Card, Typography, Space } from "antd";
 import type { ReactNode } from "react";
 
-import type { Insight } from "../model/types";
+import type { Insight } from "../../model/types";
 import styles from "./InsightCard.module.scss";
 
 const { Text, Paragraph } = Typography;
