@@ -1,0 +1,32 @@
+@use "@/app/styles/variables" as *;
+
+.container {
+  width: 100%;
+}
+
+.heading {
+  margin-bottom: 20px !important;
+  color: $color-text-primary !important;
+}
+
+.list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.empty {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 240px;
+  padding: 32px;
+  background-color: $color-surface;
+  border-radius: $radius-lg;
+}
+
+@media (max-width: 768px) {
+  .list {
+    grid-template-columns: 1fr;
+  }
+}
