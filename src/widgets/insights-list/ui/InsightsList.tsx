@@ -6,6 +6,7 @@ import { useAppSelector } from "@/app/providers/store";
 import styles from "./InsightsList.module.scss";
 
 const { Title, Text } = Typography;
+import { DeleteInsight } from "@/features/delete-insight";
 
 export const InsightsList = () => {
   const insights = useAppSelector(getInsights);
@@ -32,7 +33,11 @@ export const InsightsList = () => {
 
       <div className={styles.list}>
         {insights.map((insight) => (
-          <InsightCard key={insight.id} insight={insight} />
+          <InsightCard
+            key={insight.id}
+            insight={insight}
+            actions={<DeleteInsight insightId={insight.id} />}
+          />
         ))}
       </div>
     </div>
