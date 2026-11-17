@@ -1,0 +1,47 @@
+@use "@/app/styles/variables" as *;
+
+.layout {
+  display: flex;
+  min-height: 100vh;
+  background: $color-background;
+}
+
+.desktopSidebar {
+  flex-shrink: 0;
+  width: 250px;
+}
+
+.main {
+  flex: 1;
+  min-width: 0;
+}
+
+.content {
+  width: 100%;
+}
+
+.mobileHeader {
+  display: none;
+}
+
+.mobileLogo {
+  font-family: $font-family-heading;
+  font-size: 18px;
+  font-weight: 700;
+  color: $color-text-primary;
+}
+
+@media (max-width: 768px) {
+  .desktopSidebar {
+    display: none;
+  }
+
+  .mobileHeader {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    height: 60px;
+    padding: 0 16px;
+    background: $color-surface;
+  }
+}

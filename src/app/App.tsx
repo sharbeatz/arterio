@@ -1,8 +1,9 @@
-import { ConfigProvider } from "antd";
+import { ConfigProvider, App as AntdApp } from "antd";
 import ruRU from "antd/locale/ru_RU";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
+
 import { InsightsPage } from "@/pages/insights-page";
-import { App as AntdApp } from "antd";
+import { MainLayout } from "@/widgets/main-layout";
 
 function App() {
   return (
@@ -23,7 +24,10 @@ function App() {
       <AntdApp>
         <BrowserRouter>
           <Routes>
-            <Route path="/insights" element={<InsightsPage />} />
+            <Route element={<MainLayout />}>
+              <Route path="/" element={<Navigate to="/insights" replace />} />
+              <Route path="/insights" element={<InsightsPage />} />
+            </Route>
           </Routes>
         </BrowserRouter>
       </AntdApp>
