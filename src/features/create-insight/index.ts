@@ -1,1 +1,1 @@
-export { CreateInsight } from "./ui/CreateInsight";
+export { CreateInsightAction } from "./ui/CreateInsightAction";
