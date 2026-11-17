@@ -24,7 +24,7 @@ export const InsightForm = ({
         label="Заголовок"
         name="title"
         rules={[
-          { required: true, message: "Введите заголовок" },
+          { required: true, message: "Ты не добавил заголовок инсайта :(" },
           { whitespace: true, message: "Заголовок не может быть пустым" },
           { max: 100, message: "Максимум 100 символов" },
         ]}
@@ -36,7 +36,7 @@ export const InsightForm = ({
         label="Твоя мысль"
         name="content"
         rules={[
-          { required: true, message: "Ты не добавил инсайт :)" },
+          { required: true, message: "Ты не добавил инсайт :(" },
           { whitespace: true, message: "Инсайт не может быть пустым" },
         ]}
       >
