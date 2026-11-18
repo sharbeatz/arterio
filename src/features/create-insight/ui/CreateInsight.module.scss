@@ -1,0 +1,42 @@
+@use "@/app/styles/variables" as *;
+
+.form {
+  width: 100%;
+
+  :global(.ant-form-item-label > label) {
+    color: $color-text-primary;
+    font-weight: 500;
+  }
+
+  :global(.ant-input),
+  :global(.ant-input-affix-wrapper) {
+    border-radius: $radius-md;
+  }
+
+  :global(.ant-input:focus),
+  :global(.ant-input-focused) {
+    border-color: $color-primary;
+    box-shadow: 0 0 0 2px rgb(89 213 213 / 15%);
+  }
+
+  :global(.ant-input-textarea textarea) {
+    resize: vertical;
+  }
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+
+  :global(.ant-btn-primary) {
+    background-color: $color-primary;
+    border-color: $color-primary;
+    color: $color-text-primary;
+    border-radius: $radius-md;
+    box-shadow: none;
+
+    &:hover {
+      background-color: darken($color-primary, 5%);
+    }
+  }
+}

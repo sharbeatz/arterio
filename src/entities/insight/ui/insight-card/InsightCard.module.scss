@@ -1,0 +1,40 @@
+@use "@/app/styles/variables" as *;
+
+.card {
+  width: 100%;
+  border-radius: $radius-lg;
+  background-color: $color-surface;
+  box-shadow: 0 2px 12px rgb(32 36 43 / 4%);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgb(32 36 43 / 7%);
+  }
+
+  :global(.ant-card-body) {
+    padding: 20px;
+  }
+}
+
+.content {
+  width: 100%;
+}
+
+.date {
+  color: $color-text-secondary;
+  font-size: 12px;
+}
+
+.title {
+  margin: 0 !important;
+  color: $color-text-primary !important;
+}
+
+.description {
+  margin-bottom: 0;
+  color: $color-text-secondary;
+  line-height: 1.6;
+}
