@@ -2,7 +2,7 @@ name: Deploy Arterio to GitHub Pages
 
 on:
   push:
-    branches: ["feature/insight"]
+    branches: ["main"]
   workflow_dispatch:
 
 permissions:
