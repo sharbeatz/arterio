@@ -1,9 +1,9 @@
 import { ConfigProvider, App as AntdApp } from "antd";
 import ruRU from "antd/locale/ru_RU";
-import { Route, Routes, Navigate, HashRouter } from "react-router";
-
+import { Route, Routes, HashRouter } from "react-router";
 import { InsightsPage } from "@/pages/insights-page";
 import { MainLayout } from "@/widgets/main-layout";
+import { LandingPage } from "@/pages/landing-page";
 
 function App() {
   return (
@@ -25,7 +25,7 @@ function App() {
         <HashRouter>
           <Routes>
             <Route element={<MainLayout />}>
-              <Route path="/" element={<Navigate to="/insights" replace />} />
+              <Route path="/" element={<LandingPage />} />
               <Route path="/insights" element={<InsightsPage />} />
             </Route>
           </Routes>
