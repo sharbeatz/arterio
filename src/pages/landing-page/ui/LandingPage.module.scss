@@ -1,0 +1,472 @@
+@use "@/app/styles/variables" as *;
+
+.page {
+  width: 100%;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.content {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 48px 60px;
+  box-sizing: border-box;
+}
+
+// HERO
+
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 40px;
+  min-height: 540px;
+}
+
+.heroContent {
+  max-width: 540px;
+
+  h1 {
+    margin: 22px 0;
+    color: $color-text-primary;
+    font-family: $font-family-heading;
+    font-size: clamp(38px, 4vw, 58px);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -1.5px;
+
+    span {
+      color: #43bebe;
+    }
+  }
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #299d9d;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.description {
+  max-width: 460px;
+  color: $color-text-secondary;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-top: 30px;
+
+  :global(.ant-btn) {
+    min-height: 46px;
+    padding-inline: 22px;
+    font-weight: 600;
+  }
+}
+
+.note {
+  display: block;
+  max-width: 420px;
+  margin-top: 26px;
+  color: $color-text-secondary;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+// HERO VISUAL
+
+.heroVisual {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 420px;
+}
+
+.visualCircle {
+  position: absolute;
+  width: 340px;
+  height: 340px;
+  border-radius: 50%;
+  background: $color-accent-soft;
+}
+
+.visualCard {
+  position: relative;
+  z-index: 1;
+  width: 280px;
+  padding: 25px;
+  border-radius: 22px;
+  background: white;
+  box-shadow: 0 20px 60px rgb(32 36 43 / 10%);
+
+  .cardLabel {
+    color: $color-text-secondary;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+
+  h3 {
+    margin: 18px 0 8px;
+    color: $color-text-primary;
+    font-family: $font-family-heading;
+    font-size: 19px;
+    line-height: 1.4;
+  }
+
+  p {
+    margin: 0;
+    color: $color-text-secondary;
+    font-size: 13px;
+    line-height: 1.7;
+  }
+}
+
+.thoughtIcon,
+.insightIcon,
+.moodIcon,
+.activityIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+  font-size: 22px;
+}
+
+.thoughtIcon,
+.insightIcon {
+  background: $color-accent-soft;
+  color: #299d9d;
+}
+
+.thoughtIcon {
+  margin-top: 20px;
+}
+
+.cardFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-top: 22px;
+  padding-top: 15px;
+  border-top: 1px solid $color-background;
+  color: #299d9d;
+  font-size: 11px;
+}
+
+// FLOATING CARDS
+
+.moodCard,
+.activityCard {
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 15px;
+  border-radius: 16px;
+  background: white;
+  box-shadow: 0 12px 35px rgb(32 36 43 / 8%);
+}
+
+.moodCard {
+  top: 35px;
+  right: 0;
+
+  > svg {
+    color: #c18b94;
+    font-size: 22px;
+  }
+
+  div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  div span {
+    color: $color-text-secondary;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+
+  strong {
+    color: $color-text-primary;
+    font-size: 12px;
+  }
+}
+
+.moodEmoji {
+  color: #c18b94;
+  font-size: 25px;
+}
+
+.activityCard {
+  bottom: 35px;
+  left: 0;
+  color: #716a8a;
+  font-size: 12px;
+}
+
+// FEATURES
+
+.features {
+  padding: 70px 0 90px;
+}
+
+.sectionHeading {
+  max-width: 600px;
+  margin: 0 auto 40px;
+  text-align: center;
+
+  h2 {
+    margin: 16px 0;
+    color: $color-text-primary;
+    font-family: $font-family-heading;
+    font-size: 34px;
+    line-height: 1.25;
+  }
+
+  p {
+    margin: 0;
+    color: $color-text-secondary;
+    font-size: 14px;
+    line-height: 1.7;
+  }
+}
+
+.featureGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.featureCard {
+  padding: 25px;
+  border: 1px solid #edf0f1;
+  border-radius: 18px;
+  background: white;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    border-color: #dceeee;
+    box-shadow: 0 12px 30px rgb(32 36 43 / 6%);
+  }
+
+  h3 {
+    margin: 18px 0 10px;
+    color: $color-text-primary;
+    font-family: $font-family-heading;
+    font-size: 19px;
+    line-height: 1.4;
+  }
+
+  p {
+    margin: 0;
+    color: $color-text-secondary;
+    font-size: 13px;
+    line-height: 1.7;
+  }
+}
+
+.moodIcon {
+  background: $color-mood-accent;
+  color: #b77c86;
+}
+
+.activityIcon {
+  background: $color-inspiration;
+  color: #716a8a;
+}
+
+// BOTTOM CTA
+
+.cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 35px;
+  padding: 42px 45px;
+  border-radius: 24px;
+  background: $color-accent-soft;
+
+  > div {
+    max-width: 620px;
+  }
+
+  h2 {
+    margin: 0 0 12px;
+    color: $color-text-primary;
+    font-family: $font-family-heading;
+    font-size: 27px;
+    line-height: 1.3;
+  }
+
+  p {
+    margin: 0;
+    color: $color-text-secondary;
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  :global(.ant-btn) {
+    flex-shrink: 0;
+    min-height: 46px;
+    padding-inline: 22px;
+    font-weight: 600;
+  }
+}
+
+// TABLET
+
+@media (max-width: 1100px) {
+  .content {
+    padding-inline: 30px;
+  }
+
+  .hero {
+    gap: 20px;
+  }
+
+  .visualCircle {
+    width: 290px;
+    height: 290px;
+  }
+
+  .moodCard {
+    right: -5px;
+  }
+
+  .featureGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+// MOBILE
+
+@media (max-width: 768px) {
+  .content {
+    padding: 30px 20px 40px;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    padding-top: 35px;
+  }
+
+  .heroContent {
+    max-width: none;
+    text-align: center;
+
+    h1 {
+      font-size: 42px;
+    }
+  }
+
+  .eyebrow {
+    justify-content: center;
+    font-size: 10px;
+  }
+
+  .description {
+    margin-inline: auto;
+  }
+
+  .note {
+    margin-inline: auto;
+  }
+
+  .actions {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .heroVisual {
+    min-height: 390px;
+  }
+
+  .features {
+    padding: 60px 0;
+  }
+
+  .featureGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .sectionHeading h2 {
+    font-size: 28px;
+  }
+
+  .cta {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 30px;
+
+    h2 {
+      font-size: 24px;
+    }
+  }
+}
+
+// SMALL MOBILE
+
+@media (max-width: 420px) {
+  .content {
+    padding-inline: 16px;
+  }
+
+  .heroContent h1 {
+    font-size: 35px;
+    letter-spacing: -0.8px;
+  }
+
+  .visualCard {
+    width: 250px;
+    padding: 22px;
+  }
+
+  .visualCircle {
+    width: 270px;
+    height: 270px;
+  }
+
+  .moodCard,
+  .activityCard {
+    padding: 11px;
+  }
+
+  .moodCard {
+    right: -5px;
+  }
+
+  .activityCard {
+    left: -5px;
+    font-size: 10px;
+  }
+
+  .cta {
+    padding: 25px 20px;
+
+    :global(.ant-btn) {
+      width: 100%;
+    }
+  }
+}
