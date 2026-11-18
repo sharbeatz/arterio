@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink } from "react-router";
 import { BulbOutlined } from "@ant-design/icons";
 
 import styles from "./Sidebar.module.scss";
@@ -16,7 +16,7 @@ export const Sidebar = ({ onNavigate }: SidebarProps) => {
       </div>
 
       <div className={styles.navigation}>
-        <span className={styles.sectionTitle}>MENU</span>
+        <span className={styles.sectionTitle}>МЕНЮ</span>
 
         <NavLink
           to="/insights"
@@ -26,7 +26,7 @@ export const Sidebar = ({ onNavigate }: SidebarProps) => {
           }
         >
           <BulbOutlined />
-          <span>Insights</span>
+          <span>Инсайты</span>
         </NavLink>
       </div>
 
@@ -34,8 +34,10 @@ export const Sidebar = ({ onNavigate }: SidebarProps) => {
         <div className={styles.profile}>
           <div className={styles.avatar}>A</div>
           <div className={styles.profileInfo}>
-            <span className={styles.profileName}>My Space</span>
-            <span className={styles.profileDescription}>Personal space</span>
+            <span className={styles.profileName}>Моё пространство</span>
+            <span className={styles.profileDescription}>
+              Личное пространство
+            </span>
           </div>
         </div>
       </div>
